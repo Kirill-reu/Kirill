@@ -25,7 +25,7 @@ while tasks:
     current_task = tasks.popleft() 
     print(f"Выполняется: {current_task}")
 
-#Создание приоритетной очереди на языке python
+#Создание приоритетной очереди на языке python (вариант 1)
 from queue import PriorityQueue 
 q = PriorityQueue() 
 q.put((2, 'mid-priority item')) 
@@ -34,5 +34,15 @@ q.put((3, 'low-priority item'))
 while not q.empty(): 
     item = q.get()
     print(item)
+    
+#Создание приоритетной очереди на языке python (вариант 2)
+import heapq   
+customers =   
+heapq.heappush(customers, (2, "Harry")) 
+heapq.heappush(customers, (3, "Charles")) 
+heapq.heappush(customers, (1, "Riya")) 
+heapq.heappush(customers, (4, "Stacy")) 
+while customers: 
+    print(heapq.heappop(customers)) 
 
 
