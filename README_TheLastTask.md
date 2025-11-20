@@ -6,10 +6,8 @@
 
 Язык примера: C++
 
-<int knapsackGreedy(vector<int> weights, vector<int> values, int W) { 
-
+```int knapsackGreedy(vector<int> weights, vector<int> values, int W) { 
 vector<pair<double, int>> items; // (удельная стоимость, индекс) 
-
 for (int i = 0; i < weights.size(); i++) { 
 items.push_back({(double)values[i]/weights[i], i}); 
 } 
@@ -20,4 +18,4 @@ int i = p.second;
 // ДОПИСАТЬ: если вес позволяет, взять предмет 
 } 
 return totalValue; 
-}>
+}```
