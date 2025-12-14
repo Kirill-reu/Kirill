@@ -23,7 +23,7 @@
       from scipy.ndimage import gaussian_filter1d
   ```
    ##### 2) Блок определения класса трансформера
-      \*1. Инициализация весов\*
+      1. Инициализация весов
    ```
         def __init__(self, input_size, hidden_size, num_classes):
         self.W1 = np.random.randn(input_size, hidden_size) * 0.1
@@ -33,14 +33,16 @@
         self.W3 = np.random.randn(hidden_size, num_classes) * 0.1
   ```
       2. Функции активации
+   ```
         def relu(self, x):
            return np.maximum(0, x)
         
         def softmax(self, x):
            ex = np.exp(x - np.max(x, axis=1, keepdims=True))
            return ex / (np.sum(ex, axis=1, keepdims=True) + 1e-8)
-           
+    ```       
       - Прямое распространение (Forward Pass)
+   ```
         def forward(self, X):
         
         #1. Embedding layer
@@ -68,8 +70,9 @@
         #6. Output layer
         Z3 = np.dot(A2, self.W3) + self.b3
         A3 = self.softmax(Z3)
-        
+   ```      
       - Обратное распространение (Backward Pass)
+   ```
         def backward(self, X, y, learning_rate):
            #Cross-entropy gradient
            dZ3 = logits.copy()
@@ -84,4 +87,5 @@
            #Обновление весов
            self.W3 -= learning_rate * dW3
            self.W2 -= learning_rate * dW2
+    ```
    3) Блок основной функции Main()
