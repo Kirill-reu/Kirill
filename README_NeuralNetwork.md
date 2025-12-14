@@ -35,6 +35,7 @@
         def softmax(self, x):
            ex = np.exp(x - np.max(x, axis=1, keepdims=True))
            return ex / (np.sum(ex, axis=1, keepdims=True) + 1e-8)
+           
       - Прямое распространение (Forward Pass)
         def forward(self, X):
         
@@ -63,6 +64,7 @@
         #6. Output layer
         Z3 = np.dot(A2, self.W3) + self.b3
         A3 = self.softmax(Z3)
+        
       - Обратное распространение (Backward Pass)
         def backward(self, X, y, learning_rate):
            #Cross-entropy gradient
