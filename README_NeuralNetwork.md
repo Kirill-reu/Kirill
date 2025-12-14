@@ -1,6 +1,6 @@
-### Вариант 20: Transformer архитектура для NLP
+# Вариант 20: Transformer архитектура для NLP
 -----------------
- # 1) Полное задание из методички:
+ ### 1) Полное задание из методички:
     ----
   - Задача: реализовать Transformer для machine translation или language modeling.
   - Требования: Multi-Head Self-Attention, Position Encoding, Feed-Forward Network, Encoder-Decoder архитектура, Beam search декодирование
@@ -13,6 +13,6 @@
     6. Полный Transformer
     7. Декодирование алгоритмы (greedy и beam search)
     8. Evaluate метрики (BLEU для machine translation)
-# 2) Алгоритм работы по блокам:
+### 2) Алгоритм работы по блокам:
    --
    1) Блок импорта библиотек
