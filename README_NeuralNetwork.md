@@ -19,5 +19,5 @@
       from sklearn.preprocessing import StandardScaler
       from sklearn.metrics import accuracy_score, precision_score, recall_score
       import matplotlib.pyplot as plt
-      from scipy.ndimage import gaussian_filter1d>
+      from scipy.ndimage import gaussian_filter1d
    ##### 2) Блок определения класса трансформера
