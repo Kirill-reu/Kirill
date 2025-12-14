@@ -22,7 +22,7 @@
       import matplotlib.pyplot as plt
       from scipy.ndimage import gaussian_filter1d
   ```
-   ##### 2) Блок определения класса трансформера
+   ##### 2) Определение класса трансформера
       1. Инициализация весов
    ```
         def __init__(self, input_size, hidden_size, num_classes):
