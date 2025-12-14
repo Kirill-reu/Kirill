@@ -13,7 +13,7 @@
     8. Evaluate метрики (BLEU для machine translation)
 ### 2) Алгоритм работы по блокам:
    ##### 1) Блок импорта библиотек
-      <import numpy as np
+      import numpy as np
       from sklearn.datasets import load_iris
       from sklearn.model_selection import train_test_split
       from sklearn.preprocessing import StandardScaler
