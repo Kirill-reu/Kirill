@@ -21,16 +21,14 @@
       import matplotlib.pyplot as plt
       from scipy.ndimage import gaussian_filter1d
    ##### 2) Блок определения класса трансформера
-      - Инициализация весов
-      ```
+      1. Инициализация весов
         def __init__(self, input_size, hidden_size, num_classes):
         self.W1 = np.random.randn(input_size, hidden_size) * 0.1
         self.W_q = np.random.randn(hidden_size, hidden_size) * 0.1
         self.W_k = np.random.randn(hidden_size, hidden_size) * 0.1
         self.W_v = np.random.randn(hidden_size, hidden_size) * 0.1
         self.W3 = np.random.randn(hidden_size, num_classes) * 0.1
-      ```
-      - Функции активации
+      2. Функции активации
         def relu(self, x):
            return np.maximum(0, x)
         
