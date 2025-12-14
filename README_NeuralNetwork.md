@@ -78,13 +78,37 @@
            #Обновление весов
            self.W3 -= learning_rate * dW3
            self.W2 -= learning_rate * dW2
-   3) Блок основной функции Main()
+   #### 3) Блок основной функции Main()
    ###### - Загрузка и подготовка данных
-   iris = load_iris()
-   X = iris.data
-   y = iris.target
-   X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
-   scaler = StandardScaler()
-   X_train = scaler.fit_transform(X_train)
-   X_test = scaler.transform(X_test)
-   5) 
+       iris = load_iris()
+       X = iris.data
+       y = iris.target
+       X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+       scaler = StandardScaler()
+       X_train = scaler.fit_transform(X_train)
+       X_test = scaler.transform(X_test)
+   ###### -  Инициализация модели
+       model = TransformerNet(input_size=4, hidden_size=32, num_classes=3)
+   ###### - Цикл обучения
+       for epoch in range(epochs):
+         # Динамический learning rate
+         current_lr = initial_lr * (0.9 ** (epoch // 50))
+         # Mini-batch обучение
+         for i in range(0, X_train.shape[0], batch_size):
+           X_batch = X_train[batch_indices]
+           y_batch = y_train[batch_indices]
+           model.backward(X_batch, y_batch, current_lr * 0.5)
+       # Расчет метрик
+       train_pred = model.predict(X_train)
+       train_acc = accuracy_score(y_train, train_pred)
+       val_pred = model.predict(X_test)
+       val_acc = accuracy_score(y_test, val_pred)
+   ###### - Визуализация результатов
+       # Построение графиков
+       fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
+       ax1.plot(epochs_range, train_accs_smooth, linewidth=3.5, color='#1f77b4')
+       ax2.plot(epochs_range, train_precs_smooth, linewidth=3, color='#2ca02c')
+       
+       plt.savefig('transformer_smooth_curves.png', dpi=300)
+       plt.show()
+   5) Блок выполнения программы
