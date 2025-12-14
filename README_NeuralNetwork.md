@@ -79,3 +79,12 @@
            self.W3 -= learning_rate * dW3
            self.W2 -= learning_rate * dW2
    3) Блок основной функции Main()
+   ###### - Загрузка и подготовка данных
+   iris = load_iris()
+   X = iris.data
+   y = iris.target
+   X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+   scaler = StandardScaler()
+   X_train = scaler.fit_transform(X_train)
+   X_test = scaler.transform(X_test)
+   5) 
