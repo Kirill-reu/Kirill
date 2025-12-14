@@ -111,4 +111,6 @@
        
        plt.savefig('transformer_smooth_curves.png', dpi=300)
        plt.show()
-   5) Блок выполнения программы
+   #### 5) Блок выполнения программы
+       if __name__ == "__main__":
+          main()
